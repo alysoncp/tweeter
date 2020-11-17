@@ -20,6 +20,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 40px;
@@ -30,12 +31,53 @@ body {
 
 main {
   display: flex;
+  flex-direction: column;
   width: 90%;
   height: 50px;
   padding-bottom: 400px;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
 
+article {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 15px;
+  border: solid;
+}
+
+article:hover {
+  -webkit-box-shadow: 5px 5px 3px 3px rgba(82, 119, 241, 0.3);
+  box-shadow: 5px 5px 3px 3px rgba(20, 54, 167, 0.3);
+}
+
+.user-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.handle {
+  font-size: 25px;
+  opacity: .5;
+  visibility: hidden;
+}
+
+article:hover .handle {
+  visibility: visible;
+}
+
+.tweet-body {
+  font-weight: bold;
+  border-bottom: solid;
+  padding: 15px;
+}
+
+.tweet-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+  padding-bottom: 10px;
+  font-size: 20px;
+}

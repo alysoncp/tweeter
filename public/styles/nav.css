@@ -4,11 +4,13 @@ nav {
   width: 100vw;
   display: flex;
   justify-content: space-between;
-  height: 120px;
+  height: 100px;
   display: flex;
   background-color: #4056A1;
   color: #FFFFFF;
-  padding: 1.5em;
+  padding: 35px;
+  position: fixed;
+  top: 0px;
 } 
 
 nav > span {
