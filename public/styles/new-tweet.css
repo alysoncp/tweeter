@@ -1,0 +1,26 @@
+.new-tweet {
+  width: 100%;
+}
+
+#tweet-text {
+  margin: 5px;
+  background-color: #f4f1ec;
+  width: 100%;
+  border: none;
+  border-bottom-style: solid;
+  outline: none;
+  resize: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#tweet-sub {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
+}
+
+#tweet-button {
+  background-color: #4056A1;
+  color: white;
+}
