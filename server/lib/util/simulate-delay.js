@@ -8,7 +8,7 @@
 // realistic even while we use a simplistic "in-memory" db.
 
 function someMilliseconds() {
-  return 0; ///// I CHANGED THIS /////
+   return Math.floor(Math.random() * 400) + 100;
 }
 
 module.exports = function simulateDelay(callback) {
