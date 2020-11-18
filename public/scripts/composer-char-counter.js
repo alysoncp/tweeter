@@ -1,8 +1,9 @@
 $(document).ready(function() {
   console.log("ready");
 
-  $( '#tweet-text' ).keydown(function() {
+  $( '#tweet-text' ).on("input", function() {
     const numOfChars = this.value.length;
+    console.log(numOfChars)
     const counterPath = $(this).siblings("#tweet-sub").find("#counter")
     counterPath.val(140 - numOfChars)
     
