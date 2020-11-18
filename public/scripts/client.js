@@ -7,6 +7,11 @@
 
 $(document).ready(function() {
 
+  $("#tweet-text").focus(() => {
+    $(".error-msg").text('')
+    $(".error-msg").css("visibility", "hidden")
+  })
+
   const escape =  function(str) {
     let span = document.createElement('span');
     span.appendChild(document.createTextNode(str));
@@ -57,7 +62,8 @@ $(document).ready(function() {
     $postedTweet.on("submit", function(event) {
       event.preventDefault();
       console.log($("#tweet-text").text)
-      if(($("#tweet-text").val()) && ($("#tweet-text").length) < 140) { 
+      if(($("#tweet-text").val()) && ($("#tweet-text").val().length) < 140) { 
+        console.log($("#tweet-text").val().length)
         const serializedData = $(this).serialize();
         $.post("/tweets/", serializedData)
           .then(() => {
@@ -65,8 +71,15 @@ $(document).ready(function() {
           }  )
           .then(()=> $("#tweet-text").val(''))
           .then(() => $("#counter").val(140))
+      } else if (($("#tweet-text").val() === '')){
+        $(".error-msg").text("You have to type something...")
+        $(".error-msg").css("visibility", "visible")
+      } else if (($("#tweet-text").val().length > 140)){
+        $(".error-msg").text("Too many charecters!!")
+        $(".error-msg").css("visibility", "visible")
       } else {
-        alert("Nothing to tweet!")
+        $(".error-msg").text("Something weird happened... sorry")
+        $(".error-msg").css("visibility", "visible")
       }
     });
     

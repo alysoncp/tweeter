@@ -1,4 +1,13 @@
+.error-msg {
+  color: red;
+  margin-top: 10px;
+  padding-left: 10px;
+  visibility: hidden;
+  border: solid;
+}
+
 .new-tweet {
+  margin-top:15px;
   width: 100%;
 }
 
