@@ -59,24 +59,27 @@
 
       <hr>
 
-      <div>
-        <article>
-          <div class="user-info">
-            <label>Name Name</label>
-            <label class="handle">@handle</label>
-          </div>
-          <div class="tweet-body">
-            <span>tweet tweet tweet</span>
-          </div>
-          <div class="tweet-info">
-            <span>Date of text</span>
-            <span> $ & @</span>
-          </div>
-
-        </article>
-        
+      <div id="tweets-container">
+        <!-- Tweets dynamically allocated -->
       </div>
 
     </main>
+
+<!-- 
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+    $(function() {
+      const $form = $('.form-inline');
+      $form.on('submit', function () {
+        console.log('Button clicked, performing ajax call...');
+        // $.ajax('more-posts.html', { method: 'GET' })
+        // .then(function (morePostsHtml) {
+        //   console.log('Success: ', morePostsHtml);
+        //   $button.replaceWith(morePostsHtml);
+        // });
+      });
+    });
+    </script> -->
+
   </body>
 </html>
