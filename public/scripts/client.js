@@ -18,7 +18,23 @@ $(document).ready(function() {
     return span.innerHTML;
   }
 
+  const dateDisplay = function (dateCreated) {
+    const d = new Date();
+    const n = d.getTime();
+    const msSince = n-dateCreated;
+    if (msSince < 60000) {
+      return `${Math.floor(msSince/1000)} seconds ago`
+    } else if (msSince > 60000 && msSince < 3600000){
+      return `${Math.floor(msSince/100000)} minutes ago`
+    } else if (msSince > 3600000 && msSince < 86400000) {
+      return `${Math.floor(msSince/3600000)} hours ago`
+    } else if (msSince > 86400000) {
+      return `${Math.floor(msSince/86400000)} days ago`
+    }
+  }
+
   const createTweetElement = function(data) {
+    const tweetAge = dateDisplay(data.created_at);
     const $tweet = $(`<article class="tweet">
     <div class="user-info">
       <label> ${data.user.name} </label>
@@ -28,7 +44,7 @@ $(document).ready(function() {
       <span>${escape(data.content.text)}</span>
     </div>
     <div class="tweet-info">
-      <span>${data.created_at}</span>
+      <span>${tweetAge}</span>
       <span> $ & @</span>
     </div>
 
