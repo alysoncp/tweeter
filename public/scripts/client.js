@@ -49,7 +49,7 @@ $(document).ready(function() {
     </div>
     <div class="tweet-info">
       <span>${tweetAge}</span>
-      <span> $ & @</span>
+      <span> <img src="./images/flag.png" class="tweet-icon"> <img src="./images/retweet.png" class="tweet-icon"> <img src="./images/like.png" class="tweet-icon"></span>
     </div>
     </article>`
     );
